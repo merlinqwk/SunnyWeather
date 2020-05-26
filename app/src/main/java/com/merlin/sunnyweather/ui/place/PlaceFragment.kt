@@ -52,7 +52,7 @@ class PlaceFragment : Fragment() {
                 viewModel.placeList.addAll(places)
                 adapter.notifyDataSetChanged()
             }else{
-                Toast.makeText(activity,"为查询到任何地点",Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity,"未查询到任何地点",Toast.LENGTH_SHORT).show()
                 result.exceptionOrNull()?.printStackTrace()
             }
         })

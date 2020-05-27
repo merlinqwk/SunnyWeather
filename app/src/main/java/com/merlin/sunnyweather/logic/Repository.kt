@@ -45,7 +45,7 @@ object Repository {
             val realTimeResponse = deferredRealTime.await()
             val dailyResponse = deferredDaily.await()
             if (realTimeResponse.status == "ok" && dailyResponse.status == "ok"){
-                Result.success(Weather(realTimeResponse.result.realTime,
+                Result.success(Weather(realTimeResponse.result.realtime,
                     dailyResponse.result.daily))
             }else{
                 Result.failure(RuntimeException("refreshWeather failed," +
@@ -54,6 +54,12 @@ object Repository {
             }
         }
     }
+
+    fun savePlace(place: Place) = PlaceDao.savePlace(place)
+
+    fun getSavedPlace() = PlaceDao.getSavedPlace()
+
+    fun isPlaceSaved() = PlaceDao.isPlaceSaved()
 
 }
 

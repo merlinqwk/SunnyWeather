@@ -1,6 +1,7 @@
 package com.merlin.sunnyweather.logic.model
 
 import com.google.gson.annotations.SerializedName
+import java.util.*
 
 data class DailyResponse(val status: String, val result: Result) {
 
@@ -11,11 +12,12 @@ data class DailyResponse(val status: String, val result: Result) {
 
     data class Temperature(val date: String, val max: Float, val min: Float)
 
-    data class Skycon(val data: String, val value: String)
+    data class Skycon(val date: Date, val value: String)
 
     data class LifeIndex(val ultraviolet: List<LifeDescription>,
                          val carWashing: List<LifeDescription>,
-                         val dressing: List<LifeDescription>)
+                         val dressing: List<LifeDescription>,
+                         val coldRisk: List<LifeDescription>)
 
     data class LifeDescription(val date: String, val desc: String)
 }

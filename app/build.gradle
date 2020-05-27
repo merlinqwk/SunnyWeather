@@ -18,10 +18,10 @@ android {
 
     signingConfigs{
         config{
-            storeFile file('C:\\Users\\qinwe\\wenke.jks')
-            storePassword '19931224'
-            keyAlias 'wenkedev'
-            keyPassword '19931224'
+            storeFile file(KEY_PATH)
+            storePassword KEY_PATH
+            keyAlias ALIAS_NAME
+            keyPassword ALIAS_NAME
         }
     }
 
